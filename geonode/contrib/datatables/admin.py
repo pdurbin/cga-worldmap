@@ -76,6 +76,8 @@ class JoinTargetAdminForm(forms.ModelForm):
 class JoinTargetAdmin(admin.ModelAdmin):
     model = JoinTarget
     form = JoinTargetAdminForm
+    search_fields = ('name',)
+    list_filter = ('geocode_type', 'year')
     list_display = ('name', 'layer', 'attribute', 'geocode_type', 'expected_format', 'year')
     readonly_fields = ('return_to_layer_admin', )
 
